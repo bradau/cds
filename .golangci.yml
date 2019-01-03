@@ -3,3 +3,9 @@
 service:
   prepare:
     - apt-get update && apt-get install -y libsecret-1-dev
+
+linters:
+  enable-all: true
+
+skip-files:
+    - ".*_test.go$"
