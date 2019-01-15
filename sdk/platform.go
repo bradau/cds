@@ -14,10 +14,9 @@ var (
 	}
 	// KafkaPlatform represent a kafka platform
 	KafkaPlatform = PlatformModel{
-		Name:       KafkaPlatformModel,
-		Author:     "CDS",
-		Identifier: "github.com/ovh/cds/platform/builtin/kafka",
-		Icon:       "",
+		Name:   KafkaPlatformModel,
+		Author: "CDS",
+		Icon:   "",
 		DefaultConfig: PlatformConfig{
 			"broker url": PlatformConfigValue{
 				Type: PlatformConfigTypeString,
@@ -34,10 +33,9 @@ var (
 	}
 	// RabbitMQPlatform represent a kafka platform
 	RabbitMQPlatform = PlatformModel{
-		Name:       RabbitMQPlatformModel,
-		Author:     "CDS",
-		Identifier: "github.com/ovh/cds/platform/builtin/rabbitmq",
-		Icon:       "",
+		Name:   RabbitMQPlatformModel,
+		Author: "CDS",
+		Icon:   "",
 		DefaultConfig: PlatformConfig{
 			"uri": PlatformConfigValue{
 				Type: PlatformConfigTypeString,
@@ -114,7 +112,6 @@ type PlatformModel struct {
 	ID                      int64                     `json:"id" db:"id" yaml:"-" cli:"-"`
 	Name                    string                    `json:"name" db:"name" yaml:"name" cli:"name,key"`
 	Author                  string                    `json:"author" db:"author" yaml:"author" cli:"author"`
-	Identifier              string                    `json:"identifier" db:"identifier" yaml:"identifier,omitempty"`
 	Icon                    string                    `json:"icon" db:"icon" yaml:"icon"`
 	DefaultConfig           PlatformConfig            `json:"default_config" db:"-" yaml:"default_config"`
 	DeploymentDefaultConfig PlatformConfig            `json:"deployment_default_config" db:"-" yaml:"deployment_default_config"`
@@ -123,8 +120,7 @@ type PlatformModel struct {
 	PublicConfigurations    map[string]PlatformConfig `json:"public_configurations,omitempty" db:"-" yaml:"public_configurations"`
 	Disabled                bool                      `json:"disabled" db:"disabled" yaml:"disabled"`
 	Hook                    bool                      `json:"hook" db:"hook" yaml:"hook" cli:"hooks_supported"`
-	FileStorage             bool                      `json:"file_storage" db:"file_storage" yaml:"file_storage" cli:"file_storage supported"`
-	BlockStorage            bool                      `json:"block_storage" db:"block_storage" yaml:"block_storage" cli:"block_storage supported"`
+	Artifacts               bool                      `json:"artifacts" db:"artifacts" yaml:"artifacts" cli:"artifacts storage supported"`
 	Deployment              bool                      `json:"deployment" db:"deployment" yaml:"deployment" cli:"deployment_supported"`
 	Compute                 bool                      `json:"compute" db:"compute" yaml:"compute" cli:"compute_supported"`
 	Public                  bool                      `json:"public,omitempty" db:"public" yaml:"public,omitempty"`

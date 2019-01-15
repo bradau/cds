@@ -1,0 +1,4 @@
+name: plugin-artifact-openstack
+type: platform
+author: "Yvonnick Esnault"
+description: "OVH Openstack Artifact Plugin"
